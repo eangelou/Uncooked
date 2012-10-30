@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/3/trunk/LDD3Examples/misc-progs
+END
+datasize.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/3/trunk/LDD3Examples/misc-progs/datasize.c
+END
+inp.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/3/trunk/LDD3Examples/misc-progs/inp.c
+END
+asynctest.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/3/trunk/LDD3Examples/misc-progs/asynctest.c
+END
+polltest.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/3/trunk/LDD3Examples/misc-progs/polltest.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/3/trunk/LDD3Examples/misc-progs/Makefile
+END
+setconsole.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3/trunk/LDD3Examples/misc-progs/setconsole.c
+END
+netifdebug.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3/trunk/LDD3Examples/misc-progs/netifdebug.c
+END
+dataalign.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/3/trunk/LDD3Examples/misc-progs/dataalign.c
+END
+load50.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/3/trunk/LDD3Examples/misc-progs/load50.c
+END
+mapper.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/3/trunk/LDD3Examples/misc-progs/mapper.c
+END
+outp.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/3/trunk/LDD3Examples/misc-progs/outp.c
+END
+setlevel.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/3/trunk/LDD3Examples/misc-progs/setlevel.c
+END
+gdbline
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/3/trunk/LDD3Examples/misc-progs/gdbline
+END
+nbtest.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/3/trunk/LDD3Examples/misc-progs/nbtest.c
+END
+mapcmp.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/3/trunk/LDD3Examples/misc-progs/mapcmp.c
+END

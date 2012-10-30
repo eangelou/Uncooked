@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/3/trunk/LDD3Examples/shortprint
+END
+shortprint_load
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/3/trunk/LDD3Examples/shortprint/shortprint_load
+END
+shortprint.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3/trunk/LDD3Examples/shortprint/shortprint.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/3/trunk/LDD3Examples/shortprint/Makefile
+END
+shortprint.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3/trunk/LDD3Examples/shortprint/shortprint.h
+END
+shortprint_unload
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/3/trunk/LDD3Examples/shortprint/shortprint_unload
+END

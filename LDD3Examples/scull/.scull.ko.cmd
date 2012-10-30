@@ -1,0 +1,1 @@
+cmd_/home/vagos/workspace/LDD3Examples/scull/scull.ko := ld -r -m elf_x86_64 -T /usr/src/linux-headers-3.0.0-15-generic/scripts/module-common.lds --build-id  -o /home/vagos/workspace/LDD3Examples/scull/scull.ko /home/vagos/workspace/LDD3Examples/scull/scull.o /home/vagos/workspace/LDD3Examples/scull/scull.mod.o
