@@ -10,7 +10,7 @@ else
 endif
 
 EXTRA_CFLAGS += $(DEBFLAGS)
-EXTRA_CFLAGS += -I..
+EXTRA_CFLAGS += -I.. -I/usr/src/linux-headers-3.2.0-33-generic/include/
 
 ifneq ($(KERNELRELEASE),)
 # call from kernel build system
@@ -30,7 +30,6 @@ endif
 
 
 clean:
-	svn update --accept theirs-full
 	rm -rf *.o *~ core .depend .*.cmd *.ko *.mod.c .tmp_versions
 
 depend .depend dep:

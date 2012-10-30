@@ -1,7 +1,7 @@
 This example has tested under the environment:
 
-	OS: Ubuntu 10.10 (Maverick Meerkat)
-	Kernel: 2.6.35
+	OS: Ubuntu 12.04 (precise)
+	Kernel: 3.2.0-33
 
 
 
