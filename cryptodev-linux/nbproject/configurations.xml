@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="80">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df name="cryptodev-linux" root=".">
+      <df name=".tmp_versions">
+        <in>cryptodev.mod</in>
+      </df>
+      <df name="crypto">
+        <in>cryptodev.h</in>
+      </df>
+      <df name="examples">
+        <in>aes-gcm.c</in>
+        <in>aes-gcm.h</in>
+        <in>aes-sha1.c</in>
+        <in>aes-sha1.h</in>
+        <in>aes.c</in>
+        <in>aes.h</in>
+        <in>sha.c</in>
+        <in>sha.h</in>
+      </df>
+      <df name="extras">
+        <in>eng_cryptodev.c</in>
+      </df>
+      <df name="lib">
+        <in>benchmark.c</in>
+        <in>benchmark.h</in>
+        <in>combo.c</in>
+        <in>hash.c</in>
+        <in>hash.h</in>
+        <in>main.c</in>
+        <in>threshold.c</in>
+        <in>threshold.h</in>
+      </df>
+      <df name="tests">
+        <in>async_cipher.c</in>
+        <in>async_hmac.c</in>
+        <in>async_speed.c</in>
+        <in>cipher-aead-srtp.c</in>
+        <in>cipher-aead.c</in>
+        <in>cipher-gcm.c</in>
+        <in>cipher.c</in>
+        <in>cipher_comp.c</in>
+        <in>fullspeed.c</in>
+        <in>hash_comp.c</in>
+        <in>hashcrypt_speed.c</in>
+        <in>hmac.c</in>
+        <in>hmac_comp.c</in>
+        <in>openssl_wrapper.c</in>
+        <in>openssl_wrapper.h</in>
+        <in>sha_speed.c</in>
+        <in>speed.c</in>
+        <in>testhelper.h</in>
+      </df>
+      <in>authenc.c</in>
+      <in>cryptlib.c</in>
+      <in>cryptlib.h</in>
+      <in>cryptodev.mod.c</in>
+      <in>cryptodev_int.h</in>
+      <in>ioctl.c</in>
+      <in>main.c</in>
+      <in>util.c</in>
+      <in>util.h</in>
+      <in>version.h</in>
+      <in>zc.c</in>
+      <in>zc.h</in>
+    </df>
+    <logicalFolder name="dev" displayName="dev" projectFiles="true" root="/dev">
+      <itemPath>/dev/null</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+          <cTool>
+            <incDir>
+              <pElem>/usr/src/linux-headers-3.2.0-33-generic</pElem>
+            </incDir>
+            <preprocessorList>
+              <Elem>__KERNEL__</Elem>
+            </preprocessorList>
+          </cTool>
+        </makeTool>
+      </makefileType>
+      <item path="/dev/null" ex="false" tool="0" flavor="0">
+      </item>
+      <item path="cryptlib.c" ex="false" tool="0" flavor="0">
+        <cTool>
+          <preprocessorList>
+            <Elem>KBUILD_BASENAME=KBUILD_STR(cryptlib)</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="cryptodev.mod.c" ex="false" tool="0" flavor="0">
+        <cTool>
+          <preprocessorList>
+            <Elem>KBUILD_BASENAME=KBUILD_STR(cryptodev.mod)</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="examples/aes-gcm.c" ex="true" tool="0" flavor="0">
+      </item>
+      <item path="examples/aes-gcm.h" ex="true" tool="3" flavor="0">
+      </item>
+      <item path="examples/aes-sha1.c" ex="true" tool="0" flavor="0">
+      </item>
+      <item path="examples/aes-sha1.h" ex="true" tool="3" flavor="0">
+      </item>
+      <item path="examples/aes.c" ex="true" tool="0" flavor="0">
+      </item>
+      <item path="examples/aes.h" ex="true" tool="3" flavor="0">
+      </item>
+      <item path="examples/sha.c" ex="true" tool="0" flavor="0">
+      </item>
+      <item path="examples/sha.h" ex="true" tool="3" flavor="0">
+      </item>
+      <item path="extras/eng_cryptodev.c" ex="true" tool="0" flavor="0">
+      </item>
+      <folder path="cryptodev-linux">
+        <cTool>
+          <incDir>
+            <pElem>/usr/lib/gcc/x86_64-linux-gnu/4.6/include</pElem>
+            <pElem>/usr/src/linux-headers-3.2.0-33-generic/ubuntu/include</pElem>
+            <pElem>/usr/src/linux-headers-3.2.0-33-generic/arch/x86/include</pElem>
+            <pElem>/usr/src/linux-headers-3.2.0-33-generic/arch/x86/include/generated</pElem>
+            <pElem>/usr/src/linux-headers-3.2.0-33-generic/include</pElem>
+            <pElem>/usr/src/linux-headers-3.2.0-33-generic/include/linux/kconfig.h</pElem>
+            <pElem>.</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>CC_HAVE_ASM_GOTO</Elem>
+            <Elem>CONFIG_AS_CFI=1</Elem>
+            <Elem>CONFIG_AS_CFI_SECTIONS=1</Elem>
+            <Elem>CONFIG_AS_CFI_SIGNAL_FRAME=1</Elem>
+            <Elem>CONFIG_AS_FXSAVEQ=1</Elem>
+            <Elem>KBUILD_BASENAME=KBUILD_STR(authenc)</Elem>
+            <Elem>KBUILD_MODNAME=KBUILD_STR(cryptodev)</Elem>
+            <Elem>KBUILD_STR(s)=#s</Elem>
+            <Elem>MODULE</Elem>
+          </preprocessorList>
+        </cTool>
+      </folder>
+      <item path="ioctl.c" ex="false" tool="0" flavor="0">
+        <cTool>
+          <preprocessorList>
+            <Elem>KBUILD_BASENAME=KBUILD_STR(ioctl)</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="lib/benchmark.c" ex="true" tool="0" flavor="0">
+      </item>
+      <item path="lib/benchmark.h" ex="true" tool="3" flavor="0">
+      </item>
+      <item path="lib/combo.c" ex="true" tool="0" flavor="0">
+      </item>
+      <item path="lib/hash.c" ex="true" tool="0" flavor="0">
+      </item>
+      <item path="lib/hash.h" ex="true" tool="3" flavor="0">
+      </item>
+      <item path="lib/main.c" ex="true" tool="0" flavor="0">
+      </item>
+      <item path="lib/threshold.c" ex="true" tool="0" flavor="0">
+      </item>
+      <item path="lib/threshold.h" ex="true" tool="3" flavor="0">
+      </item>
+      <item path="main.c" ex="false" tool="0" flavor="0">
+        <cTool>
+          <preprocessorList>
+            <Elem>KBUILD_BASENAME=KBUILD_STR(main)</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="tests/async_cipher.c" ex="true" tool="0" flavor="0">
+      </item>
+      <item path="tests/async_hmac.c" ex="true" tool="0" flavor="0">
+      </item>
+      <item path="tests/async_speed.c" ex="true" tool="0" flavor="0">
+      </item>
+      <item path="tests/cipher-aead-srtp.c" ex="true" tool="0" flavor="0">
+      </item>
+      <item path="tests/cipher-aead.c" ex="true" tool="0" flavor="0">
+      </item>
+      <item path="tests/cipher-gcm.c" ex="true" tool="0" flavor="0">
+      </item>
+      <item path="tests/cipher.c" ex="true" tool="0" flavor="0">
+      </item>
+      <item path="tests/cipher_comp.c" ex="true" tool="0" flavor="0">
+      </item>
+      <item path="tests/fullspeed.c" ex="true" tool="0" flavor="0">
+      </item>
+      <item path="tests/hash_comp.c" ex="true" tool="0" flavor="0">
+      </item>
+      <item path="tests/hashcrypt_speed.c" ex="true" tool="0" flavor="0">
+      </item>
+      <item path="tests/hmac.c" ex="true" tool="0" flavor="0">
+      </item>
+      <item path="tests/hmac_comp.c" ex="true" tool="0" flavor="0">
+      </item>
+      <item path="tests/openssl_wrapper.c" ex="true" tool="0" flavor="0">
+      </item>
+      <item path="tests/openssl_wrapper.h" ex="true" tool="3" flavor="0">
+      </item>
+      <item path="tests/sha_speed.c" ex="true" tool="0" flavor="0">
+      </item>
+      <item path="tests/speed.c" ex="true" tool="0" flavor="0">
+      </item>
+      <item path="tests/testhelper.h" ex="true" tool="3" flavor="0">
+      </item>
+      <item path="util.c" ex="false" tool="0" flavor="0">
+        <cTool>
+          <preprocessorList>
+            <Elem>KBUILD_BASENAME=KBUILD_STR(util)</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="zc.c" ex="false" tool="0" flavor="0">
+        <cTool>
+          <preprocessorList>
+            <Elem>KBUILD_BASENAME=KBUILD_STR(zc)</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
