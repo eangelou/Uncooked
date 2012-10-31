@@ -58,8 +58,6 @@ test_crypto(int cfd)
 	
 	struct session_info_op siop;
 	
-// 	struct cryptodev_ctx* ctx;
-	
 	siop.ses = sess.ses;
 	if (ioctl(cfd, CIOCGSESSINFO, &siop)) {
 		perror("ioctl(CIOCGSESSINFO)");
