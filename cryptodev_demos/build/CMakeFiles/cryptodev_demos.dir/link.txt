@@ -1,0 +1,1 @@
+/usr/bin/c++   -g    CMakeFiles/cryptodev_demos.dir/main.o  -o cryptodev_demos -rdynamic 
