@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="80">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df name="cryptodev_demos" root=".">
+      <df name="autom4te.cache">
+        <in>output.0</in>
+        <in>requests</in>
+        <in>traces.0</in>
+      </df>
+      <df name="GNU-amd64-Linux">
+        <in>cryptodev_demo</in>
+      </df>
+      <in>main.cpp</in>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath>cryptodev_demo</executablePath>
+        </makeTool>
+      </makefileType>
+      <item path="autom4te.cache/output.0" ex="true" tool="3" flavor="0">
+      </item>
+      <item path="autom4te.cache/requests" ex="true" tool="3" flavor="0">
+      </item>
+      <item path="autom4te.cache/traces.0" ex="true" tool="3" flavor="0">
+      </item>
+      <item path="conftest.dir/sub/conftest.c" ex="true" tool="3" flavor="0">
+      </item>
+      <item path="conftest.dir/sub/conftst3.h" ex="true" tool="3" flavor="0">
+      </item>
+      <item path="conftest.dir/sub/conftst4.h" ex="true" tool="3" flavor="0">
+      </item>
+      <item path="conftest.dir/sub/conftst5.h" ex="true" tool="3" flavor="0">
+      </item>
+      <item path="conftest.dir/sub/conftst6.h" ex="true" tool="3" flavor="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
