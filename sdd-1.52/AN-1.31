@@ -1,0 +1,14 @@
+Changes since sdd-1.28:
+
+-	call fcync() & close for output file before retrieving statistics.
+	Tis ensures data integrity if the output file is on a NFS mounted 
+	volume and in dattition givess correct timings for tthe write speed.
+
+	This feature has been inspired by a NFS server performance test report
+	from the iX magazin. This test report was gigine completely wrong numbers.
+
+
+-	added RMT (Remote Tape Server Protocol) interface for if= & of=
+
+-	Workaround for a GCC-3.0 / Linux problem with printf()
+

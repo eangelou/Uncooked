@@ -1,0 +1,42 @@
+Changes since sdd-1.31:
+
+-	Fixed a cecurity bug in remote tape support librmt/remote.c (the RMT client).
+
+-	converted to use librmt to get enhanced RMT support.
+
+-	man page corrected
+
+-	Better compile support for True64
+
+-	Support for SCO/Caldera OpenUNIX
+
+-	Converted to use set_signal() like star.c
+
+-	Now following Cstyle indentation rules 
+
+-	Exnanced test for USE_REMOTE from librmt/remote.c
+
+-	rmthostname(host, rmtspec, sizeof(host)) -> rmthostname(host, sizeof(host), rmtspec)
+
+-	Handle signal(SIGINFO as a curtesy for *BSD users
+
+-	More size characters for bs= numbers and similar: 'e'/'E' for Exabyte 
+
+-	bs= number handling fixed (had bug for T/P/G Multiplicator)
+
+-	Call close()/fsync() after term() to make sure it has beencalled after problems
+
+-	Better casts for long long division
+
+-	Repeat fsync() and Test for EINVAL/EINTR
+
+-	HAVE_RCMD test added
+
+-	BSIZE -> SDD_BSIZE for AIX
+
+-	Test for HAVE_NETDB_H for rcmd() in remote.c
+
+-	Correctly handle -noerror with remote read/write (broken Pipe), 
+
+-	sdd no longer repeatedly reads the input file on write-retries
+

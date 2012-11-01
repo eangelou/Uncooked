@@ -1,0 +1,48 @@
+sdd is a replacement for a program called 'dd'.
+
+sdd is much faster than dd in cases where input block size (ibs) is not equal
+to the output block size (obs).
+
+sdd does not have some of the design bugs of dd that cause the following
+command to fail:
+
+dd if=/dev/rdsk/c0t0d0s2 bs=126k | rsh otherhost 'dd ibs=4k obs=126k of=/dev/rdsk/c0t0d0s2'
+
+The output disk will not be equal to the input disk because the dd command
+on 'otherhost' will read fragments of 'ibs' and fill them up to 4kB.
+
+Other features not found on 'dd':
+
+	- Statistics are much better readable as from 'dd'.
+	  Output is not # of full blocks + # of partial blocks (not useful)
+	  But: # of full blocks + # of bytes from partial blocks = full amount
+
+	sparky joerg > sdd if=/dev/rdsk/c0t0d0s0 bs=126k of=/dev/null -t
+	sdd: Read  268 records + 22528 bytes (total of 34600960 bytes = 33790.00k).
+	sdd: Wrote 268 records + 22528 bytes (total of 34600960 bytes = 33790.00k).
+	sdd: Total time 10.601sec (3187 kBytes/sec)
+
+	- rmt support for if= & of=
+
+	  call sdd -inull bs=63k count=1000 of=ntape@somehost:/dev/null
+	  to to TCP speed tests.
+
+	- output file is sync'd before doing statistic report.
+	  This enforces NFS data integrity and helps to get right numbers
+	  when doing filesystem write perfornamance tests.
+
+	- Timing available, -time option will print transfer speed
+
+	- Timing & Statistics available at any time with SIGQUIT (^\)
+	  
+	- Can seek on input and output
+	  
+	- Fast null input
+	- Fast null output
+
+	- Reblocking on pipes does not fill small input blocks to 
+	  input block size
+
+	- Debug printing
+	- Progress printing
+
