@@ -30,19 +30,19 @@
           <buildCommand>${MAKE} -f Makefile</buildCommand>
           <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
           <executablePath>cryptodev_demo</executablePath>
+          <ccTool>
+            <incDir>
+              <pElem>.</pElem>
+            </incDir>
+            <preprocessorList>
+              <Elem>HAVE_CONFIG_H</Elem>
+            </preprocessorList>
+          </ccTool>
         </makeTool>
       </makefileType>
       <item path="config.h" ex="true" tool="3" flavor="0">
       </item>
-      <item path="conftest.dir/sub/conftest.c" ex="true" tool="3" flavor="0">
-      </item>
-      <item path="conftest.dir/sub/conftst3.h" ex="true" tool="3" flavor="0">
-      </item>
-      <item path="conftest.dir/sub/conftst4.h" ex="true" tool="3" flavor="0">
-      </item>
-      <item path="conftest.dir/sub/conftst5.h" ex="true" tool="3" flavor="0">
-      </item>
-      <item path="conftest.dir/sub/conftst6.h" ex="true" tool="3" flavor="0">
+      <item path="conftest.dir/sub/conftest.c" ex="false" tool="3" flavor="0">
       </item>
     </conf>
   </confs>

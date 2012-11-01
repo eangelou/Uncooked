@@ -40,9 +40,12 @@ test_crypto(int cfd)
 	/* Use the garbage that is on the stack :-) */
 	memset(&data, 0, sizeof(data)); 
 	
-	char * arr = "my test"; 
+	char arr[4096];
+	int ret = read(2,arr,sizeof(arr));
+	
+// 	char * arr = "my test"; 
 	// copy value of arr to buff
-	for (int i=0; i<sizeof(arr); i++)
+	for (uint i=0; i<sizeof(arr); i++)
 	{
 	  data.in[i] = arr[i];
 	}

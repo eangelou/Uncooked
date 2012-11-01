@@ -16,10 +16,10 @@
 
 
 
-pkgdatadir = $(datadir)/full-package-name
-pkgincludedir = $(includedir)/full-package-name
-pkglibdir = $(libdir)/full-package-name
-pkglibexecdir = $(libexecdir)/full-package-name
+pkgdatadir = $(datadir)/cryptodev_demo
+pkgincludedir = $(includedir)/cryptodev_demo
+pkglibdir = $(libdir)/cryptodev_demo
+pkglibexecdir = $(libexecdir)/cryptodev_demo
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 install_sh_DATA = $(install_sh) -c -m 644
 install_sh_PROGRAM = $(install_sh) -c
@@ -116,18 +116,18 @@ LTLIBOBJS =
 MAKEINFO = ${SHELL} /home/vagos/workspace/Uncooked/cryptodev_demos/missing --run makeinfo
 MKDIR_P = /bin/mkdir -p
 OBJEXT = o
-PACKAGE = full-package-name
-PACKAGE_BUGREPORT = BUG-REPORT-ADDRESS
-PACKAGE_NAME = FULL-PACKAGE-NAME
-PACKAGE_STRING = FULL-PACKAGE-NAME VERSION
-PACKAGE_TARNAME = full-package-name
+PACKAGE = cryptodev_demo
+PACKAGE_BUGREPORT = eangelou@cslab.ece.ntua.gr
+PACKAGE_NAME = cryptodev_demo
+PACKAGE_STRING = cryptodev_demo 0.1
+PACKAGE_TARNAME = cryptodev_demo
 PACKAGE_URL = 
-PACKAGE_VERSION = VERSION
+PACKAGE_VERSION = 0.1
 PATH_SEPARATOR = :
 SET_MAKE = 
 SHELL = /bin/bash
 STRIP = 
-VERSION = VERSION
+VERSION = 0.1
 abs_builddir = /home/vagos/workspace/Uncooked/cryptodev_demos
 abs_srcdir = /home/vagos/workspace/Uncooked/cryptodev_demos
 abs_top_builddir = /home/vagos/workspace/Uncooked/cryptodev_demos
@@ -160,7 +160,7 @@ mandir = ${datarootdir}/man
 mkdir_p = /bin/mkdir -p
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /usr/local
+prefix = /home/vagos/workspace/Uncooked/cryptodev_demos
 program_transform_name = s,x,x,
 psdir = ${docdir}
 sbindir = ${exec_prefix}/sbin
