@@ -40,18 +40,18 @@ PATH: /usr/games
 ## Core tests. ##
 ## ----------- ##
 
-configure:2166: checking for gcc
-configure:2182: found /usr/bin/gcc
-configure:2193: result: gcc
-configure:2422: checking for C compiler version
-configure:2431: gcc --version >&5
+configure:2220: checking for gcc
+configure:2236: found /usr/bin/gcc
+configure:2247: result: gcc
+configure:2476: checking for C compiler version
+configure:2485: gcc --version >&5
 gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
 Copyright (C) 2011 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-configure:2442: $? = 0
-configure:2431: gcc -v >&5
+configure:2496: $? = 0
+configure:2485: gcc -v >&5
 Using built-in specs.
 COLLECT_GCC=gcc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.6/lto-wrapper
@@ -59,56 +59,56 @@ Target: x86_64-linux-gnu
 Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.6.3-1ubuntu5' --with-bugurl=file:///usr/share/doc/gcc-4.6/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.6 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.6 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
 Thread model: posix
 gcc version 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5) 
-configure:2442: $? = 0
-configure:2431: gcc -V >&5
+configure:2496: $? = 0
+configure:2485: gcc -V >&5
 gcc: error: unrecognized option '-V'
 gcc: fatal error: no input files
 compilation terminated.
-configure:2442: $? = 4
-configure:2431: gcc -qversion >&5
+configure:2496: $? = 4
+configure:2485: gcc -qversion >&5
 gcc: error: unrecognized option '-qversion'
 gcc: fatal error: no input files
 compilation terminated.
-configure:2442: $? = 4
-configure:2462: checking whether the C compiler works
-configure:2484: gcc    conftest.c  >&5
-configure:2488: $? = 0
-configure:2536: result: yes
-configure:2539: checking for C compiler default output file name
-configure:2541: result: a.out
-configure:2547: checking for suffix of executables
-configure:2554: gcc -o conftest    conftest.c  >&5
-configure:2558: $? = 0
-configure:2580: result: 
-configure:2602: checking whether we are cross compiling
-configure:2610: gcc -o conftest    conftest.c  >&5
-configure:2614: $? = 0
-configure:2621: ./conftest
-configure:2625: $? = 0
-configure:2640: result: no
-configure:2645: checking for suffix of object files
-configure:2667: gcc -c   conftest.c >&5
-configure:2671: $? = 0
-configure:2692: result: o
-configure:2696: checking whether we are using the GNU C compiler
-configure:2715: gcc -c   conftest.c >&5
-configure:2715: $? = 0
-configure:2724: result: yes
-configure:2733: checking whether gcc accepts -g
-configure:2753: gcc -c -g  conftest.c >&5
-configure:2753: $? = 0
-configure:2794: result: yes
-configure:2811: checking for gcc option to accept ISO C89
-configure:2875: gcc  -c -g -O2  conftest.c >&5
-configure:2875: $? = 0
-configure:2888: result: none needed
-configure:2918: checking how to run the C preprocessor
-configure:2949: gcc -E  conftest.c
-configure:2949: $? = 0
-configure:2963: gcc -E  conftest.c
+configure:2496: $? = 4
+configure:2516: checking whether the C compiler works
+configure:2538: gcc    conftest.c  >&5
+configure:2542: $? = 0
+configure:2590: result: yes
+configure:2593: checking for C compiler default output file name
+configure:2595: result: a.out
+configure:2601: checking for suffix of executables
+configure:2608: gcc -o conftest    conftest.c  >&5
+configure:2612: $? = 0
+configure:2634: result: 
+configure:2656: checking whether we are cross compiling
+configure:2664: gcc -o conftest    conftest.c  >&5
+configure:2668: $? = 0
+configure:2675: ./conftest
+configure:2679: $? = 0
+configure:2694: result: no
+configure:2699: checking for suffix of object files
+configure:2721: gcc -c   conftest.c >&5
+configure:2725: $? = 0
+configure:2746: result: o
+configure:2750: checking whether we are using the GNU C compiler
+configure:2769: gcc -c   conftest.c >&5
+configure:2769: $? = 0
+configure:2778: result: yes
+configure:2787: checking whether gcc accepts -g
+configure:2807: gcc -c -g  conftest.c >&5
+configure:2807: $? = 0
+configure:2848: result: yes
+configure:2865: checking for gcc option to accept ISO C89
+configure:2929: gcc  -c -g -O2  conftest.c >&5
+configure:2929: $? = 0
+configure:2942: result: none needed
+configure:2972: checking how to run the C preprocessor
+configure:3003: gcc -E  conftest.c
+configure:3003: $? = 0
+configure:3017: gcc -E  conftest.c
 conftest.c:9:28: fatal error: ac_nonexistent.h: No such file or directory
 compilation terminated.
-configure:2963: $? = 1
+configure:3017: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "socket-client"
@@ -119,13 +119,13 @@ configure: failed program was:
 | #define PACKAGE_URL ""
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
-configure:2988: result: gcc -E
-configure:3008: gcc -E  conftest.c
-configure:3008: $? = 0
-configure:3022: gcc -E  conftest.c
+configure:3042: result: gcc -E
+configure:3062: gcc -E  conftest.c
+configure:3062: $? = 0
+configure:3076: gcc -E  conftest.c
 conftest.c:9:28: fatal error: ac_nonexistent.h: No such file or directory
 compilation terminated.
-configure:3022: $? = 1
+configure:3076: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "socket-client"
@@ -136,158 +136,374 @@ configure: failed program was:
 | #define PACKAGE_URL ""
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
-configure:3051: checking for grep that handles long lines and -e
-configure:3109: result: /bin/grep
-configure:3114: checking for egrep
-configure:3176: result: /bin/grep -E
-configure:3181: checking for ANSI C header files
-configure:3201: gcc -c -g -O2  conftest.c >&5
-configure:3201: $? = 0
-configure:3274: gcc -o conftest -g -O2   conftest.c  >&5
-configure:3274: $? = 0
-configure:3274: ./conftest
-configure:3274: $? = 0
-configure:3285: result: yes
-configure:3298: checking for sys/types.h
-configure:3298: gcc -c -g -O2  conftest.c >&5
-configure:3298: $? = 0
-configure:3298: result: yes
-configure:3298: checking for sys/stat.h
-configure:3298: gcc -c -g -O2  conftest.c >&5
-configure:3298: $? = 0
-configure:3298: result: yes
-configure:3298: checking for stdlib.h
-configure:3298: gcc -c -g -O2  conftest.c >&5
-configure:3298: $? = 0
-configure:3298: result: yes
-configure:3298: checking for string.h
-configure:3298: gcc -c -g -O2  conftest.c >&5
-configure:3298: $? = 0
-configure:3298: result: yes
-configure:3298: checking for memory.h
-configure:3298: gcc -c -g -O2  conftest.c >&5
-configure:3298: $? = 0
-configure:3298: result: yes
-configure:3298: checking for strings.h
-configure:3298: gcc -c -g -O2  conftest.c >&5
-configure:3298: $? = 0
-configure:3298: result: yes
-configure:3298: checking for inttypes.h
-configure:3298: gcc -c -g -O2  conftest.c >&5
-configure:3298: $? = 0
-configure:3298: result: yes
-configure:3298: checking for stdint.h
-configure:3298: gcc -c -g -O2  conftest.c >&5
-configure:3298: $? = 0
-configure:3298: result: yes
-configure:3298: checking for unistd.h
-configure:3298: gcc -c -g -O2  conftest.c >&5
-configure:3298: $? = 0
-configure:3298: result: yes
-configure:3313: checking fcntl.h usability
-configure:3313: gcc -c -g -O2  conftest.c >&5
-configure:3313: $? = 0
-configure:3313: result: yes
-configure:3313: checking fcntl.h presence
-configure:3313: gcc -E  conftest.c
-configure:3313: $? = 0
-configure:3313: result: yes
-configure:3313: checking for fcntl.h
-configure:3313: result: yes
-configure:3313: checking netdb.h usability
-configure:3313: gcc -c -g -O2  conftest.c >&5
-configure:3313: $? = 0
-configure:3313: result: yes
-configure:3313: checking netdb.h presence
-configure:3313: gcc -E  conftest.c
-configure:3313: $? = 0
-configure:3313: result: yes
-configure:3313: checking for netdb.h
-configure:3313: result: yes
-configure:3313: checking netinet/in.h usability
-configure:3313: gcc -c -g -O2  conftest.c >&5
-configure:3313: $? = 0
-configure:3313: result: yes
-configure:3313: checking netinet/in.h presence
-configure:3313: gcc -E  conftest.c
-configure:3313: $? = 0
-configure:3313: result: yes
-configure:3313: checking for netinet/in.h
-configure:3313: result: yes
-configure:3313: checking for stdlib.h
-configure:3313: result: yes
-configure:3313: checking for string.h
-configure:3313: result: yes
-configure:3313: checking sys/ioctl.h usability
-configure:3313: gcc -c -g -O2  conftest.c >&5
-configure:3313: $? = 0
-configure:3313: result: yes
-configure:3313: checking sys/ioctl.h presence
-configure:3313: gcc -E  conftest.c
-configure:3313: $? = 0
-configure:3313: result: yes
-configure:3313: checking for sys/ioctl.h
-configure:3313: result: yes
-configure:3313: checking sys/socket.h usability
-configure:3313: gcc -c -g -O2  conftest.c >&5
-configure:3313: $? = 0
-configure:3313: result: yes
-configure:3313: checking sys/socket.h presence
-configure:3313: gcc -E  conftest.c
-configure:3313: $? = 0
-configure:3313: result: yes
-configure:3313: checking for sys/socket.h
-configure:3313: result: yes
-configure:3313: checking termios.h usability
-configure:3313: gcc -c -g -O2  conftest.c >&5
-configure:3313: $? = 0
-configure:3313: result: yes
-configure:3313: checking termios.h presence
-configure:3313: gcc -E  conftest.c
-configure:3313: $? = 0
-configure:3313: result: yes
-configure:3313: checking for termios.h
-configure:3313: result: yes
-configure:3313: checking for unistd.h
-configure:3313: result: yes
-configure:3327: checking for error_at_line
-configure:3343: gcc -o conftest -g -O2   conftest.c  >&5
-configure:3343: $? = 0
-configure:3351: result: yes
-configure:3365: checking for bzero
-configure:3365: gcc -o conftest -g -O2   conftest.c  >&5
-conftest.c:51:6: warning: conflicting types for built-in function 'bzero' [enabled by default]
-configure:3365: $? = 0
-configure:3365: result: yes
-configure:3365: checking for gethostbyname
-configure:3365: gcc -o conftest -g -O2   conftest.c  >&5
-configure:3365: $? = 0
-configure:3365: result: yes
-configure:3365: checking for memset
-configure:3365: gcc -o conftest -g -O2   conftest.c  >&5
-conftest.c:53:6: warning: conflicting types for built-in function 'memset' [enabled by default]
-configure:3365: $? = 0
-configure:3365: result: yes
-configure:3365: checking for socket
-configure:3365: gcc -o conftest -g -O2   conftest.c  >&5
-configure:3365: $? = 0
-configure:3365: result: yes
-configure:3423: checking for a BSD-compatible install
-configure:3491: result: /usr/bin/install -c
-configure:3502: checking whether build environment is sane
-configure:3552: result: yes
-configure:3693: checking for a thread-safe mkdir -p
-configure:3732: result: /bin/mkdir -p
-configure:3745: checking for gawk
-configure:3761: found /usr/bin/gawk
-configure:3772: result: gawk
-configure:3783: checking whether make sets $(MAKE)
-configure:3805: result: yes
-configure:3835: checking for style of include used by make
-configure:3863: result: GNU
-configure:3949: checking dependency style of gcc
-configure:4060: result: gcc3
-configure:4243: creating ./config.status
+configure:3105: checking for grep that handles long lines and -e
+configure:3163: result: /bin/grep
+configure:3168: checking for egrep
+configure:3230: result: /bin/grep -E
+configure:3235: checking for ANSI C header files
+configure:3255: gcc -c -g -O2  conftest.c >&5
+configure:3255: $? = 0
+configure:3328: gcc -o conftest -g -O2   conftest.c  >&5
+configure:3328: $? = 0
+configure:3328: ./conftest
+configure:3328: $? = 0
+configure:3339: result: yes
+configure:3352: checking for sys/types.h
+configure:3352: gcc -c -g -O2  conftest.c >&5
+configure:3352: $? = 0
+configure:3352: result: yes
+configure:3352: checking for sys/stat.h
+configure:3352: gcc -c -g -O2  conftest.c >&5
+configure:3352: $? = 0
+configure:3352: result: yes
+configure:3352: checking for stdlib.h
+configure:3352: gcc -c -g -O2  conftest.c >&5
+configure:3352: $? = 0
+configure:3352: result: yes
+configure:3352: checking for string.h
+configure:3352: gcc -c -g -O2  conftest.c >&5
+configure:3352: $? = 0
+configure:3352: result: yes
+configure:3352: checking for memory.h
+configure:3352: gcc -c -g -O2  conftest.c >&5
+configure:3352: $? = 0
+configure:3352: result: yes
+configure:3352: checking for strings.h
+configure:3352: gcc -c -g -O2  conftest.c >&5
+configure:3352: $? = 0
+configure:3352: result: yes
+configure:3352: checking for inttypes.h
+configure:3352: gcc -c -g -O2  conftest.c >&5
+configure:3352: $? = 0
+configure:3352: result: yes
+configure:3352: checking for stdint.h
+configure:3352: gcc -c -g -O2  conftest.c >&5
+configure:3352: $? = 0
+configure:3352: result: yes
+configure:3352: checking for unistd.h
+configure:3352: gcc -c -g -O2  conftest.c >&5
+configure:3352: $? = 0
+configure:3352: result: yes
+configure:3367: checking fcntl.h usability
+configure:3367: gcc -c -g -O2  conftest.c >&5
+configure:3367: $? = 0
+configure:3367: result: yes
+configure:3367: checking fcntl.h presence
+configure:3367: gcc -E  conftest.c
+configure:3367: $? = 0
+configure:3367: result: yes
+configure:3367: checking for fcntl.h
+configure:3367: result: yes
+configure:3367: checking netdb.h usability
+configure:3367: gcc -c -g -O2  conftest.c >&5
+configure:3367: $? = 0
+configure:3367: result: yes
+configure:3367: checking netdb.h presence
+configure:3367: gcc -E  conftest.c
+configure:3367: $? = 0
+configure:3367: result: yes
+configure:3367: checking for netdb.h
+configure:3367: result: yes
+configure:3367: checking netinet/in.h usability
+configure:3367: gcc -c -g -O2  conftest.c >&5
+configure:3367: $? = 0
+configure:3367: result: yes
+configure:3367: checking netinet/in.h presence
+configure:3367: gcc -E  conftest.c
+configure:3367: $? = 0
+configure:3367: result: yes
+configure:3367: checking for netinet/in.h
+configure:3367: result: yes
+configure:3367: checking for stdlib.h
+configure:3367: result: yes
+configure:3367: checking for string.h
+configure:3367: result: yes
+configure:3367: checking sys/ioctl.h usability
+configure:3367: gcc -c -g -O2  conftest.c >&5
+configure:3367: $? = 0
+configure:3367: result: yes
+configure:3367: checking sys/ioctl.h presence
+configure:3367: gcc -E  conftest.c
+configure:3367: $? = 0
+configure:3367: result: yes
+configure:3367: checking for sys/ioctl.h
+configure:3367: result: yes
+configure:3367: checking sys/param.h usability
+configure:3367: gcc -c -g -O2  conftest.c >&5
+configure:3367: $? = 0
+configure:3367: result: yes
+configure:3367: checking sys/param.h presence
+configure:3367: gcc -E  conftest.c
+configure:3367: $? = 0
+configure:3367: result: yes
+configure:3367: checking for sys/param.h
+configure:3367: result: yes
+configure:3367: checking sys/socket.h usability
+configure:3367: gcc -c -g -O2  conftest.c >&5
+configure:3367: $? = 0
+configure:3367: result: yes
+configure:3367: checking sys/socket.h presence
+configure:3367: gcc -E  conftest.c
+configure:3367: $? = 0
+configure:3367: result: yes
+configure:3367: checking for sys/socket.h
+configure:3367: result: yes
+configure:3367: checking termios.h usability
+configure:3367: gcc -c -g -O2  conftest.c >&5
+configure:3367: $? = 0
+configure:3367: result: yes
+configure:3367: checking termios.h presence
+configure:3367: gcc -E  conftest.c
+configure:3367: $? = 0
+configure:3367: result: yes
+configure:3367: checking for termios.h
+configure:3367: result: yes
+configure:3367: checking for unistd.h
+configure:3367: result: yes
+configure:3379: checking for pid_t
+configure:3379: gcc -c -g -O2  conftest.c >&5
+configure:3379: $? = 0
+configure:3379: gcc -c -g -O2  conftest.c >&5
+conftest.c: In function 'main':
+conftest.c:65:20: error: expected expression before ')' token
+configure:3379: $? = 1
+configure: failed program was:
+| /* confdefs.h */
+| #define PACKAGE_NAME "socket-client"
+| #define PACKAGE_TARNAME "socket-client"
+| #define PACKAGE_VERSION "0.1"
+| #define PACKAGE_STRING "socket-client 0.1"
+| #define PACKAGE_BUGREPORT "test"
+| #define PACKAGE_URL ""
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_FCNTL_H 1
+| #define HAVE_NETDB_H 1
+| #define HAVE_NETINET_IN_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_SYS_IOCTL_H 1
+| #define HAVE_SYS_PARAM_H 1
+| #define HAVE_SYS_SOCKET_H 1
+| #define HAVE_TERMIOS_H 1
+| #define HAVE_UNISTD_H 1
+| /* end confdefs.h.  */
+| #include <stdio.h>
+| #ifdef HAVE_SYS_TYPES_H
+| # include <sys/types.h>
+| #endif
+| #ifdef HAVE_SYS_STAT_H
+| # include <sys/stat.h>
+| #endif
+| #ifdef STDC_HEADERS
+| # include <stdlib.h>
+| # include <stddef.h>
+| #else
+| # ifdef HAVE_STDLIB_H
+| #  include <stdlib.h>
+| # endif
+| #endif
+| #ifdef HAVE_STRING_H
+| # if !defined STDC_HEADERS && defined HAVE_MEMORY_H
+| #  include <memory.h>
+| # endif
+| # include <string.h>
+| #endif
+| #ifdef HAVE_STRINGS_H
+| # include <strings.h>
+| #endif
+| #ifdef HAVE_INTTYPES_H
+| # include <inttypes.h>
+| #endif
+| #ifdef HAVE_STDINT_H
+| # include <stdint.h>
+| #endif
+| #ifdef HAVE_UNISTD_H
+| # include <unistd.h>
+| #endif
+| int
+| main ()
+| {
+| if (sizeof ((pid_t)))
+| 	    return 0;
+|   ;
+|   return 0;
+| }
+configure:3379: result: yes
+configure:3392: checking for error_at_line
+configure:3408: gcc -o conftest -g -O2   conftest.c  >&5
+configure:3408: $? = 0
+configure:3416: result: yes
+configure:3429: checking vfork.h usability
+configure:3429: gcc -c -g -O2  conftest.c >&5
+conftest.c:62:19: fatal error: vfork.h: No such file or directory
+compilation terminated.
+configure:3429: $? = 1
+configure: failed program was:
+| /* confdefs.h */
+| #define PACKAGE_NAME "socket-client"
+| #define PACKAGE_TARNAME "socket-client"
+| #define PACKAGE_VERSION "0.1"
+| #define PACKAGE_STRING "socket-client 0.1"
+| #define PACKAGE_BUGREPORT "test"
+| #define PACKAGE_URL ""
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_FCNTL_H 1
+| #define HAVE_NETDB_H 1
+| #define HAVE_NETINET_IN_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_SYS_IOCTL_H 1
+| #define HAVE_SYS_PARAM_H 1
+| #define HAVE_SYS_SOCKET_H 1
+| #define HAVE_TERMIOS_H 1
+| #define HAVE_UNISTD_H 1
+| /* end confdefs.h.  */
+| #include <stdio.h>
+| #ifdef HAVE_SYS_TYPES_H
+| # include <sys/types.h>
+| #endif
+| #ifdef HAVE_SYS_STAT_H
+| # include <sys/stat.h>
+| #endif
+| #ifdef STDC_HEADERS
+| # include <stdlib.h>
+| # include <stddef.h>
+| #else
+| # ifdef HAVE_STDLIB_H
+| #  include <stdlib.h>
+| # endif
+| #endif
+| #ifdef HAVE_STRING_H
+| # if !defined STDC_HEADERS && defined HAVE_MEMORY_H
+| #  include <memory.h>
+| # endif
+| # include <string.h>
+| #endif
+| #ifdef HAVE_STRINGS_H
+| # include <strings.h>
+| #endif
+| #ifdef HAVE_INTTYPES_H
+| # include <inttypes.h>
+| #endif
+| #ifdef HAVE_STDINT_H
+| # include <stdint.h>
+| #endif
+| #ifdef HAVE_UNISTD_H
+| # include <unistd.h>
+| #endif
+| #include <vfork.h>
+configure:3429: result: no
+configure:3429: checking vfork.h presence
+configure:3429: gcc -E  conftest.c
+conftest.c:29:19: fatal error: vfork.h: No such file or directory
+compilation terminated.
+configure:3429: $? = 1
+configure: failed program was:
+| /* confdefs.h */
+| #define PACKAGE_NAME "socket-client"
+| #define PACKAGE_TARNAME "socket-client"
+| #define PACKAGE_VERSION "0.1"
+| #define PACKAGE_STRING "socket-client 0.1"
+| #define PACKAGE_BUGREPORT "test"
+| #define PACKAGE_URL ""
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_FCNTL_H 1
+| #define HAVE_NETDB_H 1
+| #define HAVE_NETINET_IN_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_SYS_IOCTL_H 1
+| #define HAVE_SYS_PARAM_H 1
+| #define HAVE_SYS_SOCKET_H 1
+| #define HAVE_TERMIOS_H 1
+| #define HAVE_UNISTD_H 1
+| /* end confdefs.h.  */
+| #include <vfork.h>
+configure:3429: result: no
+configure:3429: checking for vfork.h
+configure:3429: result: no
+configure:3442: checking for fork
+configure:3442: gcc -o conftest -g -O2   conftest.c  >&5
+conftest.c:52:6: warning: conflicting types for built-in function 'fork' [enabled by default]
+configure:3442: $? = 0
+configure:3442: result: yes
+configure:3442: checking for vfork
+configure:3442: gcc -o conftest -g -O2   conftest.c  >&5
+configure:3442: $? = 0
+configure:3442: result: yes
+configure:3452: checking for working fork
+configure:3474: gcc -o conftest -g -O2   conftest.c  >&5
+configure:3474: $? = 0
+configure:3474: ./conftest
+configure:3474: $? = 0
+configure:3484: result: yes
+configure:3505: checking for working vfork
+configure:3615: result: yes
+configure:3643: checking for bzero
+configure:3643: gcc -o conftest -g -O2   conftest.c  >&5
+conftest.c:56:6: warning: conflicting types for built-in function 'bzero' [enabled by default]
+configure:3643: $? = 0
+configure:3643: result: yes
+configure:3643: checking for dup2
+configure:3643: gcc -o conftest -g -O2   conftest.c  >&5
+configure:3643: $? = 0
+configure:3643: result: yes
+configure:3643: checking for gethostbyname
+configure:3643: gcc -o conftest -g -O2   conftest.c  >&5
+configure:3643: $? = 0
+configure:3643: result: yes
+configure:3643: checking for memset
+configure:3643: gcc -o conftest -g -O2   conftest.c  >&5
+conftest.c:59:6: warning: conflicting types for built-in function 'memset' [enabled by default]
+configure:3643: $? = 0
+configure:3643: result: yes
+configure:3643: checking for socket
+configure:3643: gcc -o conftest -g -O2   conftest.c  >&5
+configure:3643: $? = 0
+configure:3643: result: yes
+configure:3701: checking for a BSD-compatible install
+configure:3769: result: /usr/bin/install -c
+configure:3780: checking whether build environment is sane
+configure:3830: result: yes
+configure:3971: checking for a thread-safe mkdir -p
+configure:4010: result: /bin/mkdir -p
+configure:4023: checking for gawk
+configure:4039: found /usr/bin/gawk
+configure:4050: result: gawk
+configure:4061: checking whether make sets $(MAKE)
+configure:4083: result: yes
+configure:4113: checking for style of include used by make
+configure:4141: result: GNU
+configure:4227: checking dependency style of gcc
+configure:4338: result: gcc3
+configure:4521: creating ./config.status
 
 ## ---------------------- ##
 ## Running config.status. ##
@@ -304,8 +520,8 @@ generated by GNU Autoconf 2.68.  Invocation command line was
 
 on vagos-ThinkPad-X220
 
-config.status:786: creating Makefile
-config.status:958: executing depfiles commands
+config.status:787: creating Makefile
+config.status:959: executing depfiles commands
 
 ## ---------------- ##
 ## Cache variables. ##
@@ -331,9 +547,14 @@ ac_cv_env_host_alias_value=
 ac_cv_env_target_alias_set=
 ac_cv_env_target_alias_value=
 ac_cv_func_bzero=yes
+ac_cv_func_dup2=yes
+ac_cv_func_fork=yes
+ac_cv_func_fork_works=yes
 ac_cv_func_gethostbyname=yes
 ac_cv_func_memset=yes
 ac_cv_func_socket=yes
+ac_cv_func_vfork=yes
+ac_cv_func_vfork_works=yes
 ac_cv_header_fcntl_h=yes
 ac_cv_header_inttypes_h=yes
 ac_cv_header_memory_h=yes
@@ -345,11 +566,13 @@ ac_cv_header_stdlib_h=yes
 ac_cv_header_string_h=yes
 ac_cv_header_strings_h=yes
 ac_cv_header_sys_ioctl_h=yes
+ac_cv_header_sys_param_h=yes
 ac_cv_header_sys_socket_h=yes
 ac_cv_header_sys_stat_h=yes
 ac_cv_header_sys_types_h=yes
 ac_cv_header_termios_h=yes
 ac_cv_header_unistd_h=yes
+ac_cv_header_vfork_h=no
 ac_cv_lib_error_at_line=yes
 ac_cv_objext=o
 ac_cv_path_EGREP='/bin/grep -E'
@@ -362,6 +585,7 @@ ac_cv_prog_ac_ct_CC=gcc
 ac_cv_prog_cc_c89=
 ac_cv_prog_cc_g=yes
 ac_cv_prog_make_make_set=yes
+ac_cv_type_pid_t=yes
 am_cv_CC_dependencies_compiler_type=gcc3
 
 ## ----------------- ##
@@ -383,7 +607,7 @@ CFLAGS='-g -O2'
 CPP='gcc -E'
 CPPFLAGS=''
 CYGPATH_W='echo'
-DEFS='-DPACKAGE_NAME=\"socket-client\" -DPACKAGE_TARNAME=\"socket-client\" -DPACKAGE_VERSION=\"0.1\" -DPACKAGE_STRING=\"socket-client\ 0.1\" -DPACKAGE_BUGREPORT=\"test\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_FCNTL_H=1 -DHAVE_NETDB_H=1 -DHAVE_NETINET_IN_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_SYS_IOCTL_H=1 -DHAVE_SYS_SOCKET_H=1 -DHAVE_TERMIOS_H=1 -DHAVE_UNISTD_H=1 -DHAVE_BZERO=1 -DHAVE_GETHOSTBYNAME=1 -DHAVE_MEMSET=1 -DHAVE_SOCKET=1 -DPACKAGE=\"socket-client\" -DVERSION=\"0.1\"'
+DEFS='-DPACKAGE_NAME=\"socket-client\" -DPACKAGE_TARNAME=\"socket-client\" -DPACKAGE_VERSION=\"0.1\" -DPACKAGE_STRING=\"socket-client\ 0.1\" -DPACKAGE_BUGREPORT=\"test\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_FCNTL_H=1 -DHAVE_NETDB_H=1 -DHAVE_NETINET_IN_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_SYS_IOCTL_H=1 -DHAVE_SYS_PARAM_H=1 -DHAVE_SYS_SOCKET_H=1 -DHAVE_TERMIOS_H=1 -DHAVE_UNISTD_H=1 -DHAVE_FORK=1 -DHAVE_VFORK=1 -DHAVE_WORKING_VFORK=1 -DHAVE_WORKING_FORK=1 -DHAVE_BZERO=1 -DHAVE_DUP2=1 -DHAVE_GETHOSTBYNAME=1 -DHAVE_MEMSET=1 -DHAVE_SOCKET=1 -DPACKAGE=\"socket-client\" -DVERSION=\"0.1\"'
 DEPDIR='.deps'
 ECHO_C=''
 ECHO_N='-n'
@@ -481,10 +705,16 @@ target_alias=''
 #define HAVE_STDLIB_H 1
 #define HAVE_STRING_H 1
 #define HAVE_SYS_IOCTL_H 1
+#define HAVE_SYS_PARAM_H 1
 #define HAVE_SYS_SOCKET_H 1
 #define HAVE_TERMIOS_H 1
 #define HAVE_UNISTD_H 1
+#define HAVE_FORK 1
+#define HAVE_VFORK 1
+#define HAVE_WORKING_VFORK 1
+#define HAVE_WORKING_FORK 1
 #define HAVE_BZERO 1
+#define HAVE_DUP2 1
 #define HAVE_GETHOSTBYNAME 1
 #define HAVE_MEMSET 1
 #define HAVE_SOCKET 1
@@ -492,3 +722,21 @@ target_alias=''
 #define VERSION "0.1"
 
 configure: exit 0
+
+## ---------------------- ##
+## Running config.status. ##
+## ---------------------- ##
+
+This file was extended by socket-client config.status 0.1, which was
+generated by GNU Autoconf 2.68.  Invocation command line was
+
+  CONFIG_FILES    = 
+  CONFIG_HEADERS  = 
+  CONFIG_LINKS    = 
+  CONFIG_COMMANDS = 
+  $ ./config.status Makefile depfiles
+
+on vagos-ThinkPad-X220
+
+config.status:787: creating Makefile
+config.status:959: executing depfiles commands
