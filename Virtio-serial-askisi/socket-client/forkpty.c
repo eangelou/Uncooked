@@ -58,14 +58,14 @@ int forkpty (int *amaster, char *name, void *unused1, void *unused2)
         return -1;
     }
 
-    slave = open( slave_name, O_RDWR );
+    slave = open( slave_name, O_RDWR|O_NOCTTY );
     if (slave < 0)
     {
         close( master );
 	perror("forkpty error5");
         return -1;
     }
-    printf("slave: %d\n",slave);
+    printf("slave: %s\n",slave);
 
     if (ioctl( slave, I_PUSH, "ptem" )   < 0
     ||  ioctl( slave, I_PUSH, "ldterm" ) < 0)
@@ -82,6 +82,7 @@ int forkpty (int *amaster, char *name, void *unused1, void *unused2)
     if (name)
         strcpy (name, slave_name);
     
+    return 0;
     pid = fork ();
     switch (pid)
     {

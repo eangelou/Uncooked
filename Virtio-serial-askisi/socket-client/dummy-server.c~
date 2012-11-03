@@ -35,11 +35,10 @@ int main(int argc, char *argv[])
   // Open terminal
   int mymaster, myslave = 0;
   char *myslave_name = malloc(4096) ;
+  setsuid();
   int pid = forkpty(&mymaster, myslave_name);
   
   printf("The pid: %d\n", pid);
-  
-  return 0;
   
   // Read ports 
   if (argc < 2) {

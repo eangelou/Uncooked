@@ -35,6 +35,7 @@ int main(int argc, char *argv[])
   // Open terminal
   int mymaster, myslave = 0;
   char *myslave_name = malloc(4096) ;
+  setsid();
   int pid = forkpty(&mymaster, myslave_name);
   
   printf("The pid: %d\n", pid);
