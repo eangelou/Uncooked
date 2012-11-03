@@ -27,8 +27,8 @@ int forkpty (int *amaster, char *name, void *unused1, void *unused2)
     
     setsid();
 
-//     master = open("/dev/ptmx", O_RDWR|O_NOCTTY);
-    master = posix_openpt(O_RDWR|O_NOCTTY);
+    master = open("/dev/ptmx", O_RDWR|O_NOCTTY);
+//     master = posix_openpt(O_RDWR);
     if ( master < 0 ){
 	printf("master error");
 	perror("forkpty error1");
@@ -82,6 +82,8 @@ int forkpty (int *amaster, char *name, void *unused1, void *unused2)
     if (name)
         strcpy (name, slave_name);
 
+    return 0;
+    
     pid = fork ();
     switch (pid)
     {

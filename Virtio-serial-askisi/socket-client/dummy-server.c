@@ -39,8 +39,6 @@ int main(int argc, char *argv[])
   
   printf("The pid: %d\n", pid);
   
-  return 0;
-  
   // Read ports 
   if (argc < 2) {
     fprintf(stderr,"ERROR, no port provided\n");

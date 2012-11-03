@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
 	
 	// Read response
 	n = read(mymaster,buffer,MSG_SIZE-1);
-	if (n < 0) printf("ERROR reading from terminal");
+	if (n < 0) error("ERROR reading from terminal");
 	  
 	  // Acknowledge message
 	// 	n = write(newsockfd,"I got your message",18);
