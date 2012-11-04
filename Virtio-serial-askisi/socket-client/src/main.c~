@@ -6,14 +6,43 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h> 
+#include <errno.h>
+#include <fcntl.h>
 
 #define MSG_SIZE 4096
 
 // Helper for perror
 void error(const char *msg)
 {
+    
+    printf("Error: %d", errno);
+    if (errno == EAGAIN || errno == EWOULDBLOCK || errno==EINPROGRESS)
+      return;
     perror(msg);
-    exit(0);
+//     exit(0);
+}
+
+int non_block(int fd){
+  // Set socket read non-blocking
+    // timeout structure passed into select
+    struct timeval tv;
+    // fd_set passed into select
+    fd_set fds;
+    // Set up the timeout.  here we can wait for 1 second
+    tv.tv_sec = 0;
+    tv.tv_usec = 10;
+
+    // Zero out the fd_set - make sure it's pristine
+    FD_ZERO(&fds);
+    // Set the FD that we want to read
+    FD_SET(fd, &fds); 
+    // select takes the last file descriptor value + 1 in the fdset to check,
+    // the fdset for reads, writes, and errors.  We are only passing in reads.
+    // the last parameter is the timeout.  select will return if an FD is ready or 
+    // the timeout has occurred
+    select(1, &fds, NULL, NULL, &tv);
+    // return 0 if sock is not ready to be read.
+    return FD_ISSET(fd, &fds);
 }
 
 // The main client
@@ -71,13 +100,10 @@ int main(int argc, char *argv[])
 	// Read response
 	n=1;
 	while (n>0) {
-	  bzero(buffer,MSG_SIZE);
-	  n = read(sockfd,buffer,MSG_SIZE-1);
+	  n = read(sockfd,buffer,MSG_SIZE);
 	  if (n < 0) 
 	      error("ERROR reading from socket");
-	  printf("%s\n",buffer);
-	  if (n<=MSG_SIZE )
-	    break;
+	  printf("%s",buffer);
 	}
     }
     
@@ -87,3 +113,5 @@ int main(int argc, char *argv[])
     close(sockfd);
     return 0;
 }
+
+
