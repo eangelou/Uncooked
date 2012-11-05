@@ -9,7 +9,10 @@
 #include <netinet/in.h>
 #include <fcntl.h>
 #include <sys/ioctl.h>
+#include <sys/ioctl.h>
+#include <crypto/cryptodev.h>
 
+#define	KEY_SIZE	32
 #define MSG_SIZE 4096
 #define _GNU_SOURCE  777
 
