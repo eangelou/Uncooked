@@ -1,32 +1,52 @@
 execve("./dummy-server", ["./dummy-server", "5050"], [/* 47 vars */]) = 0
-brk(0)                                  = 0x1962000
+brk(0)                                  = 0x2042000
 access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
-mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f8778a33000
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fd15176a000
 access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
 open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
 fstat(3, {st_mode=S_IFREG|0644, st_size=170158, ...}) = 0
-mmap(NULL, 170158, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f8778a09000
+mmap(NULL, 170158, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fd151740000
 close(3)                                = 0
 access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
 open("/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\200\30\2\0\0\0\0\0"..., 832) = 832
 fstat(3, {st_mode=S_IFREG|0755, st_size=1811128, ...}) = 0
-mmap(NULL, 3925208, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f8778454000
-mprotect(0x7f8778609000, 2093056, PROT_NONE) = 0
-mmap(0x7f8778808000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1b4000) = 0x7f8778808000
-mmap(0x7f877880e000, 17624, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f877880e000
+mmap(NULL, 3925208, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fd15118b000
+mprotect(0x7fd151340000, 2093056, PROT_NONE) = 0
+mmap(0x7fd15153f000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1b4000) = 0x7fd15153f000
+mmap(0x7fd151545000, 17624, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fd151545000
 close(3)                                = 0
-mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f8778a08000
-mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f8778a07000
-mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f8778a06000
-arch_prctl(ARCH_SET_FS, 0x7f8778a07700) = 0
-mprotect(0x7f8778808000, 16384, PROT_READ) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fd15173f000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fd15173e000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fd15173d000
+arch_prctl(ARCH_SET_FS, 0x7fd15173e700) = 0
+mprotect(0x7fd15153f000, 16384, PROT_READ) = 0
 mprotect(0x601000, 4096, PROT_READ)     = 0
-mprotect(0x7f8778a35000, 4096, PROT_READ) = 0
-munmap(0x7f8778a09000, 170158)          = 0
+mprotect(0x7fd15176c000, 4096, PROT_READ) = 0
+munmap(0x7fd151740000, 170158)          = 0
+brk(0)                                  = 0x2042000
+brk(0x2064000)                          = 0x2064000
 socket(PF_INET, SOCK_STREAM, IPPROTO_IP) = 3
 bind(3, {sa_family=AF_INET, sin_port=htons(5050), sin_addr=inet_addr("0.0.0.0")}, 16) = 0
 listen(3, 5)                            = 0
-accept(3, {sa_family=AF_INET, sin_port=htons(53524), sin_addr=inet_addr("127.0.0.1")}, [16]) = 4
---- SIGSEGV (Segmentation fault) @ 0 (0) ---
-+++ killed by SIGSEGV (core dumped) +++
+accept(3, {sa_family=AF_INET, sin_port=htons(58668), sin_addr=inet_addr("127.0.0.1")}, [16]) = 4
+read(4, "ls\n", 4095)                   = 3
+pipe2([5, 6], O_CLOEXEC)                = 0
+clone(child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7fd15173e9d0) = 6733
+close(6)                                = 0
+fcntl(5, F_SETFD, 0)                    = 0
+fstat(5, {st_mode=S_IFIFO|0600, st_size=0, ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fd151769000
+read(5, "dummy-server\ndummy-server.o\nfork"..., 4096) = 87
+read(5, "", 4096)                       = 0
+--- SIGCHLD (Child exited) @ 0 (0) ---
+close(5)                                = 0
+wait4(6733, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 6733
+munmap(0x7fd151769000, 4096)            = 0
+write(4, "\16dummy-server\ndummy-server.o\nfor"..., 88) = 88
+write(4, "...\0", 4)                    = 4
+fstat(1, {st_mode=S_IFCHR|0600, st_rdev=makedev(136, 2), ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fd151769000
+read(4, 0x7fffc8fb02d0, 4095)           = ? ERESTARTSYS (To be restarted)
+--- SIGINT (Interrupt) @ 0 (0) ---
++++ killed by SIGINT +++
