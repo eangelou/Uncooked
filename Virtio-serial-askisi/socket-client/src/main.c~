@@ -78,8 +78,6 @@ int main ( int argc, char *argv[] )
 		if ( in_buffer[0]=='\0' )
 			break;
 		
-		
-		
 		// Connect to socket for transmission
 		sockfd = socket ( AF_INET, SOCK_STREAM, 0 ); // AF_INET = TCP socket
 

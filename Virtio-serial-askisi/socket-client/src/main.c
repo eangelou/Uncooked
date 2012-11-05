@@ -53,7 +53,7 @@ int main ( int argc, char *argv[] )
 	int sockfd, portno, n;
 	struct sockaddr_in serv_addr;
 	struct hostent *server;
-	
+
 	// The input buffer
 	char in_buffer[MSG_SIZE];
 
@@ -77,7 +77,7 @@ int main ( int argc, char *argv[] )
 		// End client on End-of-Transmission
 		if ( in_buffer[0]=='\0' )
 			break;
-		
+
 		// Connect to socket for transmission
 		sockfd = socket ( AF_INET, SOCK_STREAM, 0 ); // AF_INET = TCP socket
 
@@ -110,15 +110,15 @@ int main ( int argc, char *argv[] )
 			n = read ( sockfd,buffer,MSG_SIZE );
 			if ( n < 0 )
 				error ( "ERROR reading from socket" );
-			
+
 			// Check for EOT (as defined by our protocol - 3 null-terminated dots)
-			if (buffer[n-5] == '\0' && buffer[n-4] == '.' && buffer[n-3] == '.' && buffer[n-2] == '.' && buffer[n-1] == '\0' ) {
+			if ( buffer[n-5] == '\0' && buffer[n-4] == '.' && buffer[n-3] == '.' && buffer[n-2] == '.' && buffer[n-1] == '\0' ) {
 				printf ( "%s",buffer );
 				break;
 			}
 
-			printf ( "%s",buffer);
-			fflush(stdout);
+			printf ( "%s",buffer );
+			fflush ( stdout );
 		}
 
 		close ( sockfd );

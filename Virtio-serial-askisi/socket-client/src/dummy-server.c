@@ -43,13 +43,6 @@ int main ( int argc, char *argv[] )
 	int * msgsize;
 	msgsize = malloc ( sizeof ( int ) );
 
-	// Open terminal
-	//   int mymaster, myslave = 0;
-	//   char *myslave_name = malloc(4096) ;
-	//   setsid();
-	//   int pid = forkpty(&mymaster, myslave_name);
-	//   printf("The pid: %d\n", pid);
-
 	// Read ports
 	if ( argc < 2 ) {
 		fprintf ( stderr,"ERROR, no port provided\n" );
@@ -92,38 +85,19 @@ int main ( int argc, char *argv[] )
 			// Run command and get output
 			if ( in_buffer[0] == '\n' && in_buffer[1] == '\0' ) {
 				sprintf ( buffer,"No Command!\n\0" );
-				*msgsize = strlen(buffer) * sizeof(char);
-				printf("No Command!\n");
+				*msgsize = strlen ( buffer ) * sizeof ( char );
+				printf ( "No Command!\n" );
 			} else {
 				buffer = run_popen ( in_buffer, msgsize );
 			}
-
-			// 	  // ioctl everything to a tty
-			//       for (i = 0; buffer[i]; i++)
-			// 	ioctl (myslave, TIOCSTI, buffer+i);
-			//
-			//       // Assume \n?
-			// 	ioctl (myslave, TIOCSTI, "\n");
-			//
-			// 	// Log message
-			// 	printf("Here is the message: %s\n",buffer);
-			//
-			// 	// Read response
-			// 	n = read(mymaster,buffer,MSG_SIZE-1);
-			// 	if (n < 0) error("ERROR reading from terminal");
-
-			// Acknowledge message
-			// 	n = write(newsockfd,"I got your message",18);
-			// 	if (n < 0) error("ERROR writing to socket");
-
 			// Send output
 			int i = 0;
-			while ( n>0) {
+			while ( n>0 ) {
 				n = write ( newsockfd,buffer+i,*msgsize-i );
 				if ( n < 0 ) error ( "ERROR writing to socket" );
 				if ( n >= *msgsize+i ) {
 					// Send EOT for us
-					k = write ( newsockfd,eot, 5 * sizeof ( char ));
+					k = write ( newsockfd,eot, 5 * sizeof ( char ) );
 					if ( k < 0 ) error ( "ERROR writing to socket" );
 					break;
 				} else
