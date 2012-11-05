@@ -1,13 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
-#define MSG_SIZE 4096
-
+#define MSG_SIZE 4
 
 char * make_message(int * msgsize, const char *fmt, ...)
 {
   int n;
-  int size = 100;     /* Guess we need no more than 100 bytes. */
+  int size = 1;     /* Guess we need no more than 100 bytes. */
   char *p, *np;
   va_list ap;
   

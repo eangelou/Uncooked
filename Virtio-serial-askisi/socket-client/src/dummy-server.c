@@ -27,11 +27,19 @@ int main ( int argc, char *argv[] )
 	char *buffer = malloc ( sizeof ( char ) * MSG_SIZE );
 	char in_buffer[MSG_SIZE];
 	struct sockaddr_in serv_addr, cli_addr;
-	int n;
+	int n,k;
 
 	// Terminal globals
 	char *nl = "\n";
 	int i = 0;
+
+	char * eot = malloc ( 5 * sizeof ( char ) ); // our protocol's EOT
+	eot[0]= '\0';
+	for ( i=1; i<4; i++ ) {
+		eot[i] = '.';
+	}
+	eot[4] = '\0';
+
 	int * msgsize;
 	msgsize = malloc ( sizeof ( int ) );
 
@@ -83,7 +91,9 @@ int main ( int argc, char *argv[] )
 
 			// Run command and get output
 			if ( in_buffer[0] == '\n' && in_buffer[1] == '\0' ) {
-				sprintf ( buffer,"%s","No command!" );
+				sprintf ( buffer,"No Command!\n\0" );
+				*msgsize = strlen(buffer) * sizeof(char);
+				printf("No Command!\n");
 			} else {
 				buffer = run_popen ( in_buffer, msgsize );
 			}
@@ -108,14 +118,21 @@ int main ( int argc, char *argv[] )
 
 			// Send output
 			int i = 0;
-			while ( n>0 && *msgsize-i>0 ) {
+			while ( n>0) {
 				n = write ( newsockfd,buffer+i,*msgsize-i );
 				if ( n < 0 ) error ( "ERROR writing to socket" );
-				if ( n == *msgsize+i )
+				if ( n >= *msgsize+i ) {
+					// Send EOT for us
+					k = write ( newsockfd,eot, 5 * sizeof ( char ));
+					if ( k < 0 ) error ( "ERROR writing to socket" );
 					break;
-				else
+				} else
 					i += n;
 			}
+
+
+
+
 		}
 		close ( newsockfd );
 	}

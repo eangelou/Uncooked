@@ -45,7 +45,7 @@ CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am_dummy_server_OBJECTS = dummy-server.$(OBJEXT) forkpty.$(OBJEXT) \
-	run-popen.$(OBJEXT)
+	run-popen.$(OBJEXT) crypto.$(OBJEXT)
 dummy_server_OBJECTS = $(am_dummy_server_OBJECTS)
 dummy_server_LDADD = $(LDADD)
 am_main_OBJECTS = main.$(OBJEXT)
@@ -154,7 +154,7 @@ top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ../..
 test_SOURCES = test.c
-dummy_server_SOURCES = dummy-server.c forkpty.c run-popen.c
+dummy_server_SOURCES = dummy-server.c forkpty.c run-popen.c crypto.c
 main_SOURCES = main.c
 all: all-am
 
@@ -243,6 +243,7 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+include ./$(DEPDIR)/crypto.Po
 include ./$(DEPDIR)/dummy-server.Po
 include ./$(DEPDIR)/forkpty.Po
 include ./$(DEPDIR)/main.Po
