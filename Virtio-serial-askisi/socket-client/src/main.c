@@ -139,11 +139,12 @@ int main ( int argc, char *argv[] )
 			error ( "ERROR connecting" );
 
 		encrypt_data (cfd, in_buffer, crypto_session, in_data );
+		decrypt_data (cfd, in_data, crypto_session, in_buffer );
 			
 		printf("Encrypted: %s",in_data );
 		
 		// Write to the socket
-		n = write ( sockfd,in_data, sizeof(in_data) );
+		n = write ( sockfd,in_buffer, sizeof(in_buffer) );
 		if ( n < 0 )
 			error ( "ERROR writing to socket" );
 

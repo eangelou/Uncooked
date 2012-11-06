@@ -69,7 +69,7 @@ void encrypt_data ( int cfd, char * arr, struct session_op * sess, char * enc )
 	cryp.op = COP_ENCRYPT;
 	if ( ioctl ( cfd, CIOCCRYPT, &cryp ) ) {
 		perror ( "ioctl(CIOCCRYPT)" );
-		return 1;
+		return ;
 	}
 	
 	strncpy(enc, data.encrypted , sizeof(data.encrypted) / sizeof(*data.encrypted));
@@ -95,11 +95,8 @@ void decrypt_data ( int cfd, char * enc, struct session_op * sess, char * arr )
 	/* Use the garbage that is on the stack :-) */
 	memset ( &data, 0, sizeof ( data ) );
 	
-	/* Copy value of arr to buff */
-	uint i;
-	for ( i=0; i<sizeof ( arr ); i++ ) {
-		data.encrypted[i] = arr[i];
-	}
+	/* Copy value of enc to buff */
+		strncpy(data.encrypted, enc, sizeof(enc) / sizeof(*enc));
 	
 	/* Decrypt data.encrypted to data.decrypted */
 	cryp.ses = (*sess).ses;
@@ -110,10 +107,12 @@ void decrypt_data ( int cfd, char * enc, struct session_op * sess, char * arr )
 	cryp.op = COP_DECRYPT;
 	if ( ioctl ( cfd, CIOCCRYPT, &cryp ) ) {
 		perror ( "ioctl(CIOCCRYPT)" );
-		return 1;
+		return;
 	}
 	
-	return &data.decrypted;
+	strncpy(arr, data.decrypted , sizeof(data.decrypted) / sizeof(*data.decrypted));
+
+	return;
 }
 
 static int
