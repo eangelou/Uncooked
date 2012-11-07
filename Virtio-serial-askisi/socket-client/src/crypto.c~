@@ -5,10 +5,6 @@
  ***************************************************************************/
 #include "crypto.h"
 
-#define	DATA_SIZE	4096
-#define	BLOCK_SIZE	16
-#define	KEY_SIZE	32
-
 int init_crypto_session(int cfd, __u8 my_key[KEY_SIZE], struct session_op * sess)
 {
 	memset ( sess, 0, sizeof ( struct session_op ) );
@@ -51,24 +47,22 @@ void encrypt_data ( int cfd, char * arr, struct session_op * sess, char * enc )
 	/* Use the garbage that is on the stack :-) */
 	memset ( &data, 0, sizeof ( data ) );
 	
-	printf("arr: %s\n",arr);
-	
 	/* Copy value of arr to buff */
-	strncpy(data.in, arr, sizeof(arr) / sizeof(*arr));
+	strcpy(data.in, arr);
 	
 	/* Encrypt data.in to data.encrypted */
 	cryp.ses = (*sess).ses;
-	cryp.len = sizeof ( data.in );
+	cryp.len = DATA_SIZE;
 	cryp.src = data.in;
 	cryp.dst = data.encrypted;
-	cryp.iv = data.iv;
 	cryp.op = COP_ENCRYPT;
 	if ( ioctl ( cfd, CIOCCRYPT, &cryp ) ) {
-		perror ( "ioctl(CIOCCRYPT)" );
+		perror ( "ioctl(COP_ENCRYPT)" );
+		enc = NULL;
 		return ;
 	}
 	
-	strncpy(enc, data.encrypted , sizeof(data.encrypted) / sizeof(*data.encrypted));
+	strcpy(enc, data.encrypted);
 	
 	return;
 	
@@ -92,21 +86,21 @@ void decrypt_data ( int cfd, char * enc, struct session_op * sess, char * arr )
 	memset ( &data, 0, sizeof ( data ) );
 	
 	/* Copy value of enc to buff */
-		strncpy(data.encrypted, enc, sizeof(enc) / sizeof(*enc));
+	strcpy(data.encrypted, enc);
 	
 	/* Decrypt data.encrypted to data.decrypted */
 	cryp.ses = (*sess).ses;
-	cryp.len = sizeof ( arr );
+	cryp.len = sizeof ( data.encrypted );
 	cryp.iv = data.iv;
 	cryp.src = data.encrypted;
 	cryp.dst = data.decrypted;
 	cryp.op = COP_DECRYPT;
 	if ( ioctl ( cfd, CIOCCRYPT, &cryp ) ) {
-		perror ( "ioctl(CIOCCRYPT)" );
+		perror ( "ioctl(COP_DECRYPT)" );
 		return;
 	}
 	
-	strncpy(arr, data.decrypted , sizeof(data.decrypted) / sizeof(*data.decrypted));
+	strcpy(arr, data.decrypted);
 
 	return;
 }

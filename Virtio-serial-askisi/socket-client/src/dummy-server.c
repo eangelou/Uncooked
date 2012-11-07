@@ -85,7 +85,7 @@ int main ( int argc, char *argv[] )
 			bzero ( in_buffer,MSG_SIZE );
 
 			//Read from socket
-			n = read ( newsockfd,in_buffer,MSG_SIZE-1 );
+			n = read ( newsockfd,in_buffer,MSG_SIZE);
 			if ( n < 0 ) error ( "ERROR reading from socket" );
 
 

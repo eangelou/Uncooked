@@ -66,11 +66,7 @@ int main ( int argc, char *argv[] )
 	
 	// initialize crypto session
 	
-	printf("Sess: %d", (*crypto_session).ses);
-	
 	init_crypto_session(cfd, my_key, crypto_session); 
-	
-	printf("Sess: %d", (*crypto_session).ses);
 	
 	// Define global vars for sock
 	int sockfd, portno, n;
@@ -97,11 +93,7 @@ int main ( int argc, char *argv[] )
 		bzero ( in_buffer,MSG_SIZE );
 		
 		fgets_data = fgets ( in_buffer,MSG_SIZE,stdin );
-		if (fgets_data == NULL) error("ERROR reading from terminal");
-
-		// End client on End-of-Transmission
-		if ( in_buffer[0]=='\0' )
-			break;
+		if (fgets_data == NULL) break; // End client on terminal End-of-Transmission
 
 		// Connect to socket for transmission
 		sockfd = socket ( AF_INET, SOCK_STREAM, 0 ); // AF_INET = TCP socket
@@ -124,11 +116,11 @@ int main ( int argc, char *argv[] )
 			error ( "ERROR connecting" );
 		
 		// Test encrypt/decrypt with cryptodev
-
 		encrypt_data (cfd, in_buffer, crypto_session, in_data );
 		decrypt_data (cfd, in_data, crypto_session, in_buffer );
 			
-		printf("Encrypted: %s",in_data );
+		printf("Encrypted: %s\n",in_data );
+		printf("Decrypted: %s\n",in_buffer );
 		
 		// Write to the socket
 		n = write ( sockfd,in_buffer, sizeof(in_buffer) );
@@ -152,7 +144,6 @@ int main ( int argc, char *argv[] )
 			printf ( "%s",buffer );
 			fflush ( stdout );
 		}
-
 		// Close the socket 
 		close ( sockfd );
 
