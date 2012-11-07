@@ -1,5 +1,6 @@
-dummy-server.o: ../../src/dummy-server.c /usr/include/stdio.h \
- /usr/include/features.h /usr/include/x86_64-linux-gnu/bits/predefs.h \
+dummy-server.o: ../../src/dummy-server.c ../../src/run-popen.h \
+ /usr/include/stdio.h /usr/include/features.h \
+ /usr/include/x86_64-linux-gnu/bits/predefs.h \
  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
@@ -65,6 +66,8 @@ dummy-server.o: ../../src/dummy-server.c /usr/include/stdio.h \
  /usr/include/linux/stddef.h \
  /usr/include/x86_64-linux-gnu/asm/posix_types.h \
  /usr/include/x86_64-linux-gnu/asm/posix_types_64.h
+
+../../src/run-popen.h:
 
 /usr/include/stdio.h:
 

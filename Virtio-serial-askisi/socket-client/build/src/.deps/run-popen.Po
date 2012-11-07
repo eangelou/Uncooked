@@ -1,5 +1,6 @@
-run-popen.o: ../../src/run-popen.c /usr/include/stdio.h \
- /usr/include/features.h /usr/include/x86_64-linux-gnu/bits/predefs.h \
+run-popen.o: ../../src/run-popen.c ../../src/run-popen.h \
+ /usr/include/stdio.h /usr/include/features.h \
+ /usr/include/x86_64-linux-gnu/bits/predefs.h \
  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
@@ -26,6 +27,8 @@ run-popen.o: ../../src/run-popen.c /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib.h
+
+../../src/run-popen.h:
 
 /usr/include/stdio.h:
 
