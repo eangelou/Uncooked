@@ -17,6 +17,19 @@ int init_crypto_session(int cfd, __u8 my_key[KEY_SIZE], struct session_op * sess
 		perror ( "ioctl(CIOCGSESSION)" );
 	}
 	
+	struct session_info_op siop;
+
+	siop.ses = (*sess).ses;
+	if (ioctl(cfd, CIOCGSESSINFO, &siop)) {
+		perror("ioctl(CIOCGSESSINFO)");
+		return -1;
+	}
+	printf("Got %s with driver %s\n",
+			siop.cipher_info.cra_name, siop.cipher_info.cra_driver_name);
+	if (!(siop.flags & SIOP_FLAG_KERNEL_DRIVER_ONLY)) {
+		printf("Note: This is not an accelerated cipher\n");
+	}
+
 	return 0;
 }
 
