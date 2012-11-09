@@ -1,0 +1,10 @@
+# @(#)rules.cnf.in	1.5 03/09/13 Copyright 1998-2003 J. Schilling
+
+EXEEXT= 
+
+LARGEFILE_CC_OPT= 
+
+SCSILIB= 
+LIB_CRYPT= -lcrypt
+LIB_ACL= 
+LIB_ATTR = 

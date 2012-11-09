@@ -1,0 +1,9 @@
+[Buildset]
+BuildItems=@Variant(\x00\x00\x00\t\x00\x00\x00\x00\x01\x00\x00\x00\x0b\x00\x00\x00\x00\x01\x00\x00\x00\x1a\x00s\x00o\x00c\x00k\x00e\x00t\x00-\x00c\x00l\x00i\x00e\x00n\x00t)
+
+[MakeBuilder]
+Make Binary=cd /home/vagos/workspace/Uncooked/Virtio-serial-askisi/socket-client/build/ && make
+Number Of Jobs=1
+
+[Project]
+VersionControlSupport=kdevgit
