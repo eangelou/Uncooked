@@ -19,7 +19,6 @@
 #include <crypto/cryptodev.h>
 #include <sys/select.h>
 
-#define MSG_SIZE 768
 
 // Helper for perror
 void error(const char *msg) {
@@ -60,7 +59,6 @@ int main(int argc, char *argv[]) {
 			7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1 };
 	struct session_op * crypto_session;
 	crypto_session = malloc(sizeof(struct session_op));
-	char * in_data = malloc(MSG_SIZE);
 	char * fgets_data;
 
 	// initialize crypto session
@@ -81,10 +79,16 @@ int main(int argc, char *argv[]) {
 	struct hostent *server;
 
 	// The input buffer
-	char in_buffer[MSG_SIZE];
+	char in_buffer[ENC_SIZE];
 
 	// The actual message buffer
-	char buffer[MSG_SIZE];
+	char in_data[MSG_SIZE];
+
+	// The output buffer
+	char out_buffer[ENC_SIZE];
+
+	// The actual message buffer
+	char out_data[MSG_SIZE];
 
 	// The actual message buffer size
 	int * msgsize;
@@ -100,11 +104,12 @@ int main(int argc, char *argv[]) {
 	while (1) {
 		// Read the command
 		printf("Please enter the command: ");
-		bzero(buffer, MSG_SIZE);
-		bzero(in_buffer, MSG_SIZE);
+		bzero(out_buffer, ENC_SIZE);
+		bzero(out_data, MSG_SIZE);
+		bzero(in_buffer, ENC_SIZE);
 		bzero(in_data, MSG_SIZE);
 
-		fgets_data = fgets(in_buffer, MSG_SIZE, stdin);
+		fgets_data = fgets(in_data, MSG_SIZE, stdin);
 		if (fgets_data == NULL )
 			break; // End client on terminal End-of-Transmission
 
@@ -129,10 +134,10 @@ int main(int argc, char *argv[]) {
 			error("ERROR connecting");
 
 		// Test encrypt/decrypt with cryptodev
-		encrypt_data(cfd, in_buffer, crypto_session, in_data);
+		encrypt_data(cfd, in_data, crypto_session, in_buffer);
 
 		// Write to the socket
-		n = write(sockfd, in_data, MSG_SIZE);
+		n = write(sockfd, in_buffer, ENC_SIZE);
 		if (n < 0)
 			error("ERROR writing to socket");
 
@@ -140,36 +145,35 @@ int main(int argc, char *argv[]) {
 		char * resp;
 		n = 1;
 		while (n > 0) {
-			n = read(sockfd, buffer, MSG_SIZE);
+			n = read(sockfd, out_buffer, ENC_SIZE);
 			if (n < 0)
 				error("ERROR reading from socket");
 
-			char * cut = malloc(strlen(buffer) * sizeof(char));
+//			char * cut = malloc(strlen(out_buffer) * sizeof(char));
 
 			// Check for EOT (as defined by our protocol - 3 null-terminated dots)
-			if (buffer[n - 5] == '\0' && buffer[n - 4] == '.'
-					&& buffer[n - 3] == '.' && buffer[n - 2] == '.'
-					&& buffer[n - 1] == '\0') {
+			if (out_buffer[n - 5] == '\0' && out_buffer[n - 4] == '.'
+					&& out_buffer[n - 3] == '.' && out_buffer[n - 2] == '.'
+					&& out_buffer[n - 1] == '\0') {
 
-				memcpy( cut, buffer , (strlen(buffer) * sizeof(char))-5 );
+//				memcpy( cut, out_buffer, (strlen(out_buffer) * sizeof(char))-5);
 
-				decrypt_data(cfd, cut, crypto_session, in_data);
-
-				printf("SECOND: \n%s\n", in_data);
+//				decrypt_data(cfd, out_buffer, crypto_session, out_data);
+//
+//				printf("SECOND: \n%s\n", out_data);
 
 				break;
 			}
 
-			strcpy(cut, buffer);
+//			strcpy(cut, out_buffer);
 
-			decrypt_data(cfd, cut, crypto_session, in_data);
+			decrypt_data(cfd, out_buffer, crypto_session, out_data);
 
-			printf("FIRST: %s\n", in_data);
+			printf("FIRST: %s\n", out_data);
 
-
-			bzero(cut, strlen(buffer) * sizeof(char));
-			bzero(buffer, MSG_SIZE);
-			bzero(in_data, MSG_SIZE);
+//			bzero(cut, strlen(out_buffer) * sizeof(char));
+			bzero(out_buffer, ENC_SIZE);
+			bzero(out_data, MSG_SIZE);
 
 			fflush(stdout);
 		}

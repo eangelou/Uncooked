@@ -13,6 +13,7 @@ int init_crypto_session(int cfd, __u8 my_key[KEY_SIZE], struct session_op * sess
 	(*sess).cipher = CRYPTO_AES_CBC;
 	(*sess).keylen = KEY_SIZE;
 	(*sess).key = my_key;
+
 	if ( ioctl ( cfd, CIOCGSESSION, sess ) ) {
 		perror ( "ioctl(CIOCGSESSION)" );
 	}
@@ -48,7 +49,7 @@ void encrypt_data ( int cfd, char * arr, struct session_op * sess, char * enc )
 {
 	struct {
 		__u8	in[DATA_SIZE],
-		     encrypted[DATA_SIZE],
+		     encrypted[ENC_SIZE],
 		     decrypted[DATA_SIZE],
 		     iv[BLOCK_SIZE],
 		     key[KEY_SIZE];
@@ -86,7 +87,7 @@ void decrypt_data ( int cfd, char * enc, struct session_op * sess, char * arr )
 {
 	struct {
 		__u8	in[DATA_SIZE],
-		     encrypted[DATA_SIZE],
+		     encrypted[ENC_SIZE],
 		     decrypted[DATA_SIZE],
 		     iv[BLOCK_SIZE],
 		     key[KEY_SIZE];

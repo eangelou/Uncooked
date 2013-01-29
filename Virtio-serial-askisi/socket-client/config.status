@@ -431,7 +431,7 @@ Copyright (C) 2012 Free Software Foundation, Inc.
 This config.status script is free software; the Free Software Foundation
 gives unlimited permission to copy, distribute and modify it."
 
-ac_pwd='/home/vagos/workspace/Uncooked/Virtio-serial-askisi/socket-client'
+ac_pwd='/home/vagos/git/Uncooked/Virtio-serial-askisi/socket-client'
 srcdir='.'
 INSTALL='/usr/bin/install -c'
 MKDIR_P='/usr/bin/mkdir -p'
@@ -617,12 +617,12 @@ S["SET_MAKE"]=""
 S["mkdir_p"]="$(MKDIR_P)"
 S["INSTALL_STRIP_PROGRAM"]="$(install_sh) -c -s"
 S["STRIP"]=""
-S["install_sh"]="${SHELL} /home/vagos/workspace/Uncooked/Virtio-serial-askisi/socket-client/config/install-sh"
-S["MAKEINFO"]="${SHELL} /home/vagos/workspace/Uncooked/Virtio-serial-askisi/socket-client/config/missing --run makeinfo"
-S["AUTOHEADER"]="${SHELL} /home/vagos/workspace/Uncooked/Virtio-serial-askisi/socket-client/config/missing --run autoheader"
-S["AUTOMAKE"]="${SHELL} /home/vagos/workspace/Uncooked/Virtio-serial-askisi/socket-client/config/missing --run automake-1.12"
-S["AUTOCONF"]="${SHELL} /home/vagos/workspace/Uncooked/Virtio-serial-askisi/socket-client/config/missing --run autoconf"
-S["ACLOCAL"]="${SHELL} /home/vagos/workspace/Uncooked/Virtio-serial-askisi/socket-client/config/missing --run aclocal-1.12"
+S["install_sh"]="${SHELL} /home/vagos/git/Uncooked/Virtio-serial-askisi/socket-client/config/install-sh"
+S["MAKEINFO"]="${SHELL} /home/vagos/git/Uncooked/Virtio-serial-askisi/socket-client/config/missing --run makeinfo"
+S["AUTOHEADER"]="${SHELL} /home/vagos/git/Uncooked/Virtio-serial-askisi/socket-client/config/missing --run autoheader"
+S["AUTOMAKE"]="${SHELL} /home/vagos/git/Uncooked/Virtio-serial-askisi/socket-client/config/missing --run automake-1.12"
+S["AUTOCONF"]="${SHELL} /home/vagos/git/Uncooked/Virtio-serial-askisi/socket-client/config/missing --run autoconf"
+S["ACLOCAL"]="${SHELL} /home/vagos/git/Uncooked/Virtio-serial-askisi/socket-client/config/missing --run aclocal-1.12"
 S["VERSION"]="VERSION"
 S["PACKAGE"]="full-package-name"
 S["CYGPATH_W"]="echo"

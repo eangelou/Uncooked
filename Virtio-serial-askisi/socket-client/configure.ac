@@ -3,7 +3,7 @@
 
 AC_PREREQ([2.68])
 AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
-AC_CONFIG_SRCDIR([src/test.c])
+AC_CONFIG_SRCDIR([src/dummy-server.c])
 AC_CONFIG_AUX_DIR(config)
 
 # Checks for programs.
