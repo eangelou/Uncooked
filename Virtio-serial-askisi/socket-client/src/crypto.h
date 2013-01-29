@@ -9,7 +9,7 @@
 #include <crypto/cryptodev.h>
 
 
-#define	DATA_SIZE	4096
+#define	DATA_SIZE	768
 #define	BLOCK_SIZE	16
 #define	KEY_SIZE	32
 
