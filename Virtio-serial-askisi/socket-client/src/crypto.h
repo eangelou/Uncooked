@@ -9,10 +9,11 @@
 #include <crypto/cryptodev.h>
 
 
-#define	DATA_SIZE	768
+#define	DATA_SIZE	8192
 #define	BLOCK_SIZE	16
 #define	KEY_SIZE	32
-
+#define ENC_SIZE 8192
+#define MSG_SIZE 8192
 
 int init_crypto_session(int cfd, __u8 my_key[KEY_SIZE], struct session_op * sess);
 int close_crypto_session(int cfd, struct session_op * sess);

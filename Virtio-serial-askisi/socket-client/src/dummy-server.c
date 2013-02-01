@@ -14,10 +14,7 @@
 #include <netinet/in.h>
 #include <fcntl.h>
 #include <sys/ioctl.h>
-#include <sys/ioctl.h>
 #include <crypto/cryptodev.h>
-
-#define MSG_SIZE 768
 
 // perror helper
 void error(const char *msg) {
@@ -54,7 +51,7 @@ int main(int argc, char *argv[]) {
 			7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1 };
 	struct session_op * crypto_session;
 	crypto_session = malloc(sizeof(struct session_op));
-	char * in_data = malloc(MSG_SIZE);
+
 	char * fgets_data;
 
 	// initialize crypto session
@@ -64,9 +61,11 @@ int main(int argc, char *argv[]) {
 	// Socket global variables
 	int sockfd, newsockfd, portno;
 	socklen_t clilen;
-	char *buffer = malloc(sizeof(char) * MSG_SIZE);
-	char in_buffer[MSG_SIZE];
-	char * out_buffer = malloc(MSG_SIZE);
+	char * out_data = malloc(MSG_SIZE);
+	char out_buffer [ENC_SIZE];
+	char in_data[MSG_SIZE];
+	char in_buffer[ENC_SIZE];
+
 	struct sockaddr_in serv_addr, cli_addr;
 	int n, k;
 	int i = 0;
@@ -113,13 +112,14 @@ int main(int argc, char *argv[]) {
 
 		in_buffer[0] = '\n';
 		while (in_buffer[0] != '\0') {
-			bzero(in_buffer, MSG_SIZE);
+			bzero(in_buffer, ENC_SIZE);
 			bzero(in_data, MSG_SIZE);
-			bzero(out_buffer, MSG_SIZE);
+			bzero(out_buffer, ENC_SIZE);
+			bzero(out_data, strlen(out_data));
 
 			//Read from socket
 			n = 1;
-			n = read(newsockfd, in_buffer, MSG_SIZE);
+			n = read(newsockfd, in_buffer, ENC_SIZE);
 			if (n < 0)
 				error("ERROR reading from socket");
 
@@ -131,33 +131,26 @@ int main(int argc, char *argv[]) {
 			// Run command and get output
 			if ((in_buffer[0] == '\n' && in_buffer[1] == '\0')
 					|| (in_data[0] == '\n' && in_data[1] == '\0')) {
-				sprintf(buffer, "No Command!\n");
-				*msgsize = strlen(buffer) * sizeof(char);
+				sprintf(out_data, "No Command!\n");
+				*msgsize = strlen(out_data) * sizeof(char);
 				printf("No Command!\n");
 			} else {
-				buffer = run_popen(in_data, msgsize);
+				out_data = run_popen(in_data, msgsize);
 			}
 
-			printf("Output: %s\n", buffer);
+			printf("Output: %s\n", out_data);
 
-			int j = 0;
-			char * cut = malloc(MSG_SIZE);
-			for (j=0; j < *msgsize; j+MSG_SIZE-1){
-				bzero(cut,MSG_SIZE);
-				memcpy( cut, buffer+j , MSG_SIZE );
 
 				// Test encrypt data before transmitting
-				encrypt_data(cfd, cut, crypto_session, out_buffer);
-
-				*msgsize = strlen(out_buffer);
+				encrypt_data(cfd, out_data, crypto_session, out_buffer);
 
 				// Send output
 				int i = 0;
 				while (n > 0) {
-					n = write(newsockfd, out_buffer + i, MSG_SIZE - i);
+					n = write(newsockfd, out_buffer + i, ENC_SIZE - i);
 					if (n < 0)
 						error("ERROR writing to socket");
-					if (n >= MSG_SIZE - i) {
+					if (n >= ENC_SIZE + i) {
 						// Send EOT for us
 						k = write(newsockfd, eot, 5 * sizeof(char));
 						if (k < 0)
@@ -167,9 +160,10 @@ int main(int argc, char *argv[]) {
 						i += n;
 				}
 
+				// Test decrypt data transmitted
 				decrypt_data(cfd, out_buffer, crypto_session, in_data);
-				printf("Decrypted: %s\n", in_data);
-			}
+				printf(" Decrypted: %s\n", in_data);
+
 		}
 		close(newsockfd);
 
