@@ -1,0 +1,10 @@
+PROXEIRO PROCEDURE
+
+1. download linux kernel v. 3.2
+2. download qemu v. 1.2.0
+3. cp from git linux_kernel/* linux-source-3.2/drivers/char/ and compile inside the VM
+4. insmod ./virtio_crypto.ko
+5. cp from git qemu/* qemu-source-1.2.0/hw/ compile and instal (make; make install)
+6. launch VM and play
+
+An exw xehasei kati, mail me.. :)
